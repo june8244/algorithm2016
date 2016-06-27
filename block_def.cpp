@@ -21,9 +21,6 @@ Block::setBlock
     _ruPos_x = pos_x + _blockWidth * unit;
     _ruPos_y = pos_y + _blockLength * unit;
     
-    cout<<"%%%%%"<< _blockWidth<<" "<<_blockLength<<endl;
-    cout<<"%%%%%"<<_ldPos_x <<" "<<_ldPos_y  <<" "<<_ruPos_x <<" "<<_ruPos_y<<endl;
-    
     for (size_t i = 0 ; i <= type->_occupiedLayer.size() ; ++i) {
         _occupiedLayer.push_back(type->_occupiedLayer[i]);
     }
@@ -88,8 +85,7 @@ Block::setBlock
             pin->_ruPos_x = pos_x + ref->_ruPos_y * unit;
             pin->_ruPos_y = pos_y + ref->_ruPos_x * unit;
         }
-        cout<<"%%%%%%%"<<pin->get_name()<<" "<<pin->_ldPos_x<<" "<<pin->_ldPos_y<<" "<<pin->_ruPos_x<<" "<<pin->_ruPos_y<<endl;
-
+        
         _ppList.insert(pair<string, Power_Pin*>(pin->_name, pin));
     }
 
